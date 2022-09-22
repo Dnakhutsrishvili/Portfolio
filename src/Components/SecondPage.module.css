@@ -1,0 +1,38 @@
+.conteiner {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+.img {
+  width: 500px;
+  border-radius: 2rem;
+}
+.textConteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 700px;
+  gap: 15px;
+}
+.text {
+  letter-spacing: 0.2em;
+  font-size: 28px;
+}
+
+.text1 {
+  margin-top: 40px;
+  letter-spacing: 0.2em;
+  font-size: 28px;
+}
+.title {
+  letter-spacing: 0.2em;
+  font-size: 30px;
+  border-bottom: 2px solid white;
+
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+}

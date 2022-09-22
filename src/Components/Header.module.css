@@ -1,0 +1,57 @@
+.HeaderParent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  background-color: #9c86f7;
+  color: #4c4179;
+  gap: 100px;
+  margin-left: 100px;
+}
+
+.Headerbox {
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  background-color: #9c86f7;
+  color: #4c4179;
+}
+.menuParent {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 170px;
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 400px;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.name {
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+.developer {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+.menuParent :hover {
+  border-bottom: 3px solid white;
+  color: white;
+}
+.row :hover {
+  color: #4c4179;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+}
