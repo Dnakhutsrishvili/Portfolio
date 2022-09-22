@@ -4,7 +4,7 @@
   justify-content: flex-start;
   flex-direction: row;
   width: 100%;
-  background-color: #9c86f7;
+  background-color: #607062;
   color: #4c4179;
   gap: 100px;
   margin-left: 100px;
@@ -14,8 +14,8 @@
   display: flex;
   margin-top: 50px;
   width: 100%;
-  background-color: #9c86f7;
-  color: #4c4179;
+  background-color: #607062;
+  color: #d9fcdb;
 }
 .menuParent {
   list-style-type: none;
@@ -47,7 +47,7 @@
   color: white;
 }
 .row :hover {
-  color: #4c4179;
+  color: #d9fcdb;
 }
 .row {
   display: flex;

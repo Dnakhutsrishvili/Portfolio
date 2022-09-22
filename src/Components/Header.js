@@ -27,7 +27,13 @@ const Header = (props) => {
               Projects
             </li>
 
-            <li>Contact</li>
+            <li
+              onClick={() => {
+                props.state(true);
+              }}
+            >
+              Contact
+            </li>
           </ul>
         </div>
       </header>

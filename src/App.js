@@ -13,20 +13,14 @@ import {
   batch,
   Fade,
   FadeIn,
-  FadeOut,
-  Move,
   MoveIn,
   MoveOut,
-  Sticky,
-  StickyIn,
-  StickyOut,
-  Zoom,
-  ZoomIn,
-  ZoomOut,
 } from "react-scroll-motion";
 import { useRef } from "react";
+import { useState } from "react";
 
 function App() {
+  //function for navigation
   const projects = useRef(null);
   const aboutMe = useRef(null);
 
@@ -36,12 +30,20 @@ function App() {
       behavior: "smooth",
     });
   };
+
+  //state for form
+  const [formShow, setFormShow] = useState(false);
+  console.log(formShow);
   return (
     <>
       <GlobalStyle />
-      <Form></Form>
-      <Header click={scrollToSection} navme={aboutMe} nav={projects}></Header>
-
+      {formShow && <Form state={setFormShow}></Form>}
+      <Header
+        state={setFormShow}
+        click={scrollToSection}
+        navme={aboutMe}
+        nav={projects}
+      ></Header>
       <ScrollContainer>
         <ScrollPage page={0}>
           <Animator animation={batch(Fade(), MoveOut(-1000, 0))}>
