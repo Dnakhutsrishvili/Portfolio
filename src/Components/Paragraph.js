@@ -4,8 +4,9 @@ const Paragraph = () => {
   return (
     <div className={classes.ParagraphContainer}>
       <p className={classes.paragraph}>
-        &nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        &nbsp;&nbsp;I am an experienced Web Developer with knowledge, of HTML,
+        CSS, Javascript & ES6 Bootstrap, Rest API, JSON React,React JS and
+        NextJS ,Node MongoDB, Express,Firebase
       </p>
     </div>
   );

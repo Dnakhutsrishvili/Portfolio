@@ -5,11 +5,10 @@ import redberry2 from "../images/redberry2.png";
 import redberry3 from "../images/redberry3.png";
 import add from "../images/add.png";
 import expense from "../images/expense.png";
-import Footer from "./Footer";
 
-const Projects = (props) => {
+const Projects = () => {
   return (
-    <div ref={props.nav} className={classes.container}>
+    <div className={classes.container}>
       <div className={classes.firstRow}>
         <a
           target="_blank"
@@ -62,7 +61,6 @@ const Projects = (props) => {
           <img className={classes.img} src={add} alt="#"></img>
         </a>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

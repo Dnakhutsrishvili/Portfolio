@@ -9,11 +9,14 @@ const Secondpage = () => {
         <p className={classes.text}>
           Hello my name is David Nakhutsrishvili and i enjoy building things on
           web.
-          <br /> My interest in Web development started in 2020 when first i
-          found out the unllimited possobilities of this filed.
-          <br /> In my learning path I finished several courses online and
-          Tbilisi Bootcamp, for HTML, CSS ,Javascript and React, At the moment
-          I'm groving my skills and searching the first developer Job.
+          <br />
+          <br /> I first became interested in web development in 2020 after
+          learning about the virtually endless possibilities in this industry.
+          <br />
+          <br />
+          In my educational journey, I completed numerous online and Tbilisi
+          Bootcamp classes in HTML, CSS, Javascript, and React. At the moment,
+          I'm honing my abilities and looking for my first developer job.
         </p>
         <p className={classes.text1}>Scroll down for Projects</p>
       </div>

@@ -5,6 +5,7 @@ import Paragraph from "./Components/Paragraph";
 import Secondpage from "./Components/SecondPage";
 import Projects from "./Components/Projects";
 import Form from "./Components/Form";
+import Footer from "./Components/Footer";
 
 import {
   Animator,
@@ -17,7 +18,7 @@ import {
   MoveOut,
 } from "react-scroll-motion";
 import { useRef } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   //function for navigation
@@ -33,7 +34,28 @@ function App() {
 
   //state for form
   const [formShow, setFormShow] = useState(false);
-  console.log(formShow);
+
+  //responsive state
+  const [width, setWindowWidth] = useState(0);
+
+  //using global width to change responsive state
+  useEffect(() => {
+    updateDimensions();
+
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
+
+  const responsive = {
+    state: width < 1300,
+  };
+
+  console.log(responsive.state);
+
   return (
     <>
       <GlobalStyle />
@@ -45,33 +67,48 @@ function App() {
         nav={projects}
       ></Header>
       <ScrollContainer>
-        <ScrollPage page={0}>
-          <Animator animation={batch(Fade(), MoveOut(-1000, 0))}>
-            <Paragraph></Paragraph>
-          </Animator>
-        </ScrollPage>
-        <div ref={aboutMe}>
-          <ScrollPage page={1}>
-            <Animator
-              animation={batch(
-                FadeIn(),
-                MoveIn(-1200, 0),
-                Fade(),
-                MoveOut(-1000, 0)
-              )}
-            >
-              <Secondpage></Secondpage>
+        {!responsive.state ? (
+          <ScrollPage page={0}>
+            <Animator animation={batch(Fade(), MoveOut(-1000, 0))}>
+              <Paragraph></Paragraph>
             </Animator>
           </ScrollPage>
-        </div>
-        <div ref={projects}>
-          <ScrollPage page={2}>
-            <Animator animation={batch(FadeIn(), MoveIn(-1200, 0))}>
-              <Projects></Projects>
-            </Animator>
-          </ScrollPage>
-        </div>
+        ) : (
+          <Paragraph></Paragraph>
+        )}
+        {!responsive.state ? (
+          <div ref={aboutMe}>
+            <ScrollPage page={1}>
+              <Animator
+                animation={
+                  !responsive.state &&
+                  batch(FadeIn(), MoveIn(-1200, 0), Fade(), MoveOut(-1000, 0))
+                }
+              >
+                <Secondpage></Secondpage>
+              </Animator>
+            </ScrollPage>
+          </div>
+        ) : (
+          <Secondpage></Secondpage>
+        )}
+        {!responsive.state ? (
+          <div ref={projects}>
+            <ScrollPage page={2}>
+              <Animator
+                animation={
+                  !responsive.state && batch(FadeIn(), MoveIn(-1200, 0))
+                }
+              >
+                <Projects state={setFormShow}></Projects>
+              </Animator>
+            </ScrollPage>
+          </div>
+        ) : (
+          <Projects state={setFormShow}></Projects>
+        )}
       </ScrollContainer>
+      <Footer state={setFormShow}></Footer>
     </>
   );
 }
